@@ -14,8 +14,8 @@ public class SmartPhone extends ElectronicDevice {
         this.hasCover = hasCover;
     }
 
-    public SmartPhone(String name, String brand, String model, int price, String carrier, boolean hasCover) {
-        super(name, brand, model, price);
+    public SmartPhone(String brand, String model, int price, String carrier, boolean hasCover) {
+        super(brand, model, price);
         this.carrier = carrier;
         this.hasCover = hasCover;
     }

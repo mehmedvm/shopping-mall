@@ -2,6 +2,7 @@ package mall.toys_r_us;
 
 public class Toy {
     //Fields
+    String name;
     String brand;
     String model;
     int price;
@@ -11,13 +12,22 @@ public class Toy {
     }
 
     //Parametirazed Constructor
-    public Toy(String brand, String model, int price) {
+    public Toy(String name, String brand, String model, int price) {
+        this.name = name;
         this.brand = brand;
         this.model = model;
         this.price = price;
     }
 
     //Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -46,7 +56,8 @@ public class Toy {
     @Override
     public String toString() {
         return "Toy{" +
-                "brand='" + brand + '\'' +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
                 '}';

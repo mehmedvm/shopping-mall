@@ -2,6 +2,7 @@ package mall.bestbuy;
 
 public class ElectronicDevice {
     //Fields
+    String name;
     String brand;
     String model;
     int price;
@@ -11,13 +12,22 @@ public class ElectronicDevice {
     }
 
     //Parametirized Constructor
-    public ElectronicDevice(String brand, String model, int price) {
+    public ElectronicDevice(String name, String brand, String model, int price) {
+        this.name = name;
         this.brand = brand;
         this.model = model;
         this.price = price;
     }
 
     //Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -46,7 +56,8 @@ public class ElectronicDevice {
     @Override
     public String toString() {
         return "ElectronicDevice{" +
-                "brand='" + brand + '\'' +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
                 '}';

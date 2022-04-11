@@ -1,32 +1,43 @@
 package mall.toys_r_us;
 
-public class Lego extends Toy{
+public class Magnatile extends Toy{
     //Fields
     String ageRange;
+    String color;
     int noOfPiesces;
 
     //Constructors
-    public Lego() {
+    public Magnatile() {
     }
 
-    public Lego(String ageRange, int noOfPiesces) {
+    public Magnatile(String ageRange, String color, int noOfPiesces) {
         this.ageRange = ageRange;
+        this.color = color;
         this.noOfPiesces = noOfPiesces;
     }
 
-    public Lego(String name, String brand, String model, int price, String ageRange, int noOfPiesces) {
+    public Magnatile(String name, String brand, String model, int price, String ageRange, String color, int noOfPiesces) {
         super(name, brand, model, price);
         this.ageRange = ageRange;
+        this.color = color;
         this.noOfPiesces = noOfPiesces;
     }
 
-    //Getters and Setters
+    // Getters and Setters
     public String getAgeRange() {
         return ageRange;
     }
 
     public void setAgeRange(String ageRange) {
         this.ageRange = ageRange;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public int getNoOfPiesces() {
@@ -40,8 +51,9 @@ public class Lego extends Toy{
     //To String
     @Override
     public String toString() {
-        return "Lego{" +
+        return "Magntile{" +
                 "ageRange='" + ageRange + '\'' +
+                ", color='" + color + '\'' +
                 ", noOfPiesces=" + noOfPiesces +
                 ", name='" + name + '\'' +
                 ", brand='" + brand + '\'' +

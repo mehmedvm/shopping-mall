@@ -1,26 +1,37 @@
-package mall.lowes;
+package mall.toys_r_us;
 
-public class Hammer extends Hardware{
+public class ToyCar extends Toy {
     //Fields
+    int ageRange;
     String color;
     int size;
 
     //Constructors
-    public Hammer() {
+    public ToyCar() {
     }
 
-    public Hammer(String color, int size) {
+    public ToyCar(int ageRange, String color, int size) {
+        this.ageRange = ageRange;
         this.color = color;
         this.size = size;
     }
 
-    public Hammer(String name, String brand, String model, int price, String color, int size) {
+    public ToyCar(String name, String brand, String model, int price, int ageRange, String color, int size) {
         super(name, brand, model, price);
+        this.ageRange = ageRange;
         this.color = color;
         this.size = size;
     }
 
-    //Getters and Setters
+    // Getters and Setters
+    public int getAgeRange() {
+        return ageRange;
+    }
+
+    public void setAgeRange(int ageRange) {
+        this.ageRange = ageRange;
+    }
+
     public String getColor() {
         return color;
     }
@@ -38,19 +49,20 @@ public class Hammer extends Hardware{
     }
 
     //To String
+
+
     @Override
     public String toString() {
-        return "Hammer{" +
-                "color='" + color + '\'' +
-                ", size=" + size +
-                ", name='" + name + '\'' +
+        return "ToyCar{" +
+                "name='" + name + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
+                ", ageRange=" + ageRange +
+                ", color='" + color + '\'' +
+                ", size=" + size +
                 '}';
     }
 
-
-    //Methods
 
 }

@@ -1,8 +1,18 @@
 import mall.ShoppingCart;
 import mall.ShoppingCartMap;
+import mall.bestbuy.ElectronicDevice.*;
 import mall.bestbuy.Laptop;
 import mall.bestbuy.SmartPhone;
 import mall.bestbuy.TV;
+
+import mall.lowes.Drill;
+import mall.lowes.Hammer;
+import mall.lowes.Screwdriver;
+
+import mall.toys_r_us.Lego;
+import mall.toys_r_us.Magnatile;
+import mall.toys_r_us.Toy.*;
+import mall.toys_r_us.ToyCar;
 import person.Person;
 
 import java.nio.file.Files;
@@ -13,18 +23,30 @@ import java.nio.file.*;
 
 
 public class Main {
-    //Class Fields
+    ////Class Fields
     private static final Scanner scanner = new Scanner(System.in);
-//    private static final ElectronicDevices electronicdevice = new ElectronicDevices(40,"Samsung","Yes");
-    private static final Laptop laptop1 = new Laptop("Dell","Latitude100", 500,"Q-Keyboard",true);
-    private static final TV tv1 = new TV("Samsung", "UltraTV123", 300,true,true);
-    private static final SmartPhone smartphone1 = new SmartPhone("Apple","iPhone12",700,"Verizon",true);
+    //private static final ElectronicDevice electronicdevice1 = new ElectronicDevice();
     private static final Path filePath = Paths.get("C:\\java-Training\\java-projects\\shopping-mall\\register.txt");
     private static Person person1 = new Person();
     //private static ShoppingCartMap shoppingCart1 = new ShoppingCartMap();
     private static HashMap<String, Integer> shoppingCartB = new HashMap<String, Integer>();
     private static List<String> shoppingCartL = new ArrayList<>();
     private static HashSet<String> shoppingCartT = new HashSet<>();
+
+    // Electronic Devices:
+    private static final Laptop laptop1 = new Laptop("Laptop","Dell","Latitude100", 500,"Q-Keyboard",true);
+    private static final TV tv1 = new TV("TV","Samsung", "UltraTV123", 300,true,true);
+    private static final SmartPhone smartphone1 = new SmartPhone("Smart Phone","Apple","iPhone12",700,"Verizon",true);
+    //Hardware:
+    private static final Hammer hammer1 = new Hammer("Hammer", "Stanley", "H1", 15, "Brown", 10);
+    private static final Screwdriver screwdriver1 = new Screwdriver("Screwdriver", "Stanley", "S1", 5,"phillips", 15);
+    private static final Drill drill1 = new Drill("Drill", "Stanley", "D1", 100, 20, "Green");
+    //Toys:
+    private static final Lego lego1 = new Lego("Lego","Lego", "Lego", 20, "5+", 50);
+    private static final ToyCar toycar1 = new ToyCar("Toy Car","Fischer", "TC1",5,4,"White",10);
+    private static final Magnatile magnatile1 = new Magnatile("Magnatile", "Magnatile", "MT1", 25, "7+", "Blue", 33);
+
+
 
     //MAIN Method
     public static void main(String[] args) {
@@ -143,20 +165,20 @@ public class Main {
             switch (pickElectronicDevice()) {
                 case 1:
                     System.out.println("You selected Laptop to add to cart");
-                    // Add the laptop to shopping cart
-                    shoppingCartB.put("Laptop",500);
+                    // Add the laptop to shopping cart that is HashMap
+                    shoppingCartB.put(laptop1.getName(),laptop1.getPrice());
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
                     break;
                 case 2:
                     System.out.println("You selected TV to add to cart");
                     // Add the TV to shopping cart
-                    shoppingCartB.put("TV",300);
+                    shoppingCartB.put(tv1.getName(),tv1.getPrice());
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
                     break;
                 case 3:
                     System.out.println("You selected Smart Phone to add to cart");
                     // Add the TSmart Phone to shopping cart
-                    shoppingCartB.put("Smart Phone",700);
+                    shoppingCartB.put(smartphone1.getName(),smartphone1.getPrice());
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
                     break;
                 case 4:
@@ -177,7 +199,7 @@ public class Main {
         1. Laptop (HP/Q-Keyboard/Touchscreen) for $500
         2. TV (Samsung/Has Remote/Has HDMI) for $300
         3. Smart Phone (Apple/Verizon/Has Cover) for $700
-        4. Exit        
+        4. Exit
         """);
         return scanner.nextInt();
     }
@@ -191,22 +213,22 @@ public class Main {
                 case 1:
                     System.out.println("You selected Hammer to add to cart");
                     // Add the Hammer to shopping cart
-                    shoppingCartL.add("Hammer");
-                    shoppingCartL.add("$15");
+                    shoppingCartL.add(hammer1.getName());
+                    shoppingCartL.add(String.valueOf(hammer1.getPrice()));
                     System.out.println("Shopping Cart Items: " + shoppingCartL);
                     break;
                 case 2:
                     System.out.println("You selected Screwdriver to add to cart");
                     // Add the Screwdriver to shopping cart
-                    shoppingCartL.add("Screwdriver");
-                    shoppingCartL.add("$5");
+                    shoppingCartL.add(screwdriver1.getName());
+                    shoppingCartL.add(String.valueOf(screwdriver1.getPrice()));
                     System.out.println("Shopping Cart Items: " + shoppingCartL);
                     break;
                 case 3:
                     System.out.println("You selected Drill to add to cart");
                     // Add the Drill to shopping cart
-                    shoppingCartL.add("Drill");
-                    shoppingCartL.add("$100");
+                    shoppingCartL.add(drill1.getName());
+                    shoppingCartL.add(String.valueOf(drill1.getPrice()));
                     System.out.println("Shopping Cart Items: " + shoppingCartL);
                     break;
                 case 4:
@@ -240,19 +262,19 @@ public class Main {
                 case 1:
                     System.out.println("You selected Lego to add to cart");
                     // Add the Lego to shopping cart
-                    shoppingCartT.add("Lego - $20");
+                    shoppingCartT.add(lego1.getName() + ": $ " + String.valueOf(lego1.getPrice()));
                     System.out.println("Shopping Cart Items: " + shoppingCartT);
                     break;
                 case 2:
                     System.out.println("You selected Toy Car to add to cart");
                     // Add the Toy Car to shopping cart
-                    shoppingCartT.add("Toy car - $5");
+                    shoppingCartT.add(toycar1.getName() + ": $ " + String.valueOf(toycar1.getPrice()));
                     System.out.println("Shopping Cart Items: " + shoppingCartT);
                     break;
                 case 3:
                     System.out.println("You selected Magnatile to add to cart");
                     // Add the Magnatile to shopping cart
-                    shoppingCartT.add("Magnatile - $25");
+                    shoppingCartT.add(magnatile1.getName() + ": $ " + String.valueOf(magnatile1.getPrice()));
                     System.out.println("Shopping Cart Items: " + shoppingCartT);
                     break;
                 case 4:

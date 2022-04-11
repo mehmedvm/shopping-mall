@@ -14,8 +14,8 @@ public class Screwdriver extends Hardware{
         this.size = size;
     }
 
-    public Screwdriver(String brand, String model, int price, String type, int size) {
-        super(brand, model, price);
+    public Screwdriver(String name, String brand, String model, int price, String type, int size) {
+        super(name, brand, model, price);
         this.type = type;
         this.size = size;
     }
@@ -38,16 +38,19 @@ public class Screwdriver extends Hardware{
     }
 
     //To String
+
     @Override
     public String toString() {
         return "Screwdriver{" +
-                "brand='" + brand + '\'' +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
                 ", type='" + type + '\'' +
                 ", size=" + size +
                 '}';
     }
+
 
     //Methods
 

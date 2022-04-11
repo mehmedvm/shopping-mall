@@ -15,8 +15,8 @@ public class Laptop extends ElectronicDevice {
         this.isTouchscreen = isTouchscreen;
     }
 
-    public Laptop(String brand, String model, int price, String keyboard, boolean isTouchscreen) {
-        super(brand, model, price);
+    public Laptop(String name, String brand, String model, int price, String keyboard, boolean isTouchscreen) {
+        super(name, brand, model, price);
         this.keyboard = keyboard;
         this.isTouchscreen = isTouchscreen;
     }

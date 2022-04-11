@@ -1,34 +1,26 @@
 package mall.lowes;
 
-public class Hammer extends Hardware{
-    //Fields
-    String color;
+public class Drill extends Hardware{
+    // Fields
     int size;
+    String color;
 
     //Constructors
-    public Hammer() {
+    public Drill() {
     }
 
-    public Hammer(String color, int size) {
-        this.color = color;
+    public Drill(int size, String color) {
         this.size = size;
+        this.color = color;
     }
 
-    public Hammer(String name, String brand, String model, int price, String color, int size) {
+    public Drill(String name, String brand, String model, int price, int size, String color) {
         super(name, brand, model, price);
-        this.color = color;
         this.size = size;
+        this.color = color;
     }
 
     //Getters and Setters
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public int getSize() {
         return size;
     }
@@ -37,12 +29,22 @@ public class Hammer extends Hardware{
         this.size = size;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     //To String
+
+
     @Override
     public String toString() {
-        return "Hammer{" +
-                "color='" + color + '\'' +
-                ", size=" + size +
+        return "Drill{" +
+                "size=" + size +
+                ", color='" + color + '\'' +
                 ", name='" + name + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
@@ -50,7 +52,7 @@ public class Hammer extends Hardware{
                 '}';
     }
 
-
     //Methods
+
 
 }

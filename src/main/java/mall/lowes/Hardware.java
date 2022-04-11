@@ -2,6 +2,7 @@ package mall.lowes;
 
 public class Hardware {
     //Fields
+    String name;
     String brand;
     String model;
     int price;
@@ -11,13 +12,22 @@ public class Hardware {
     }
 
     //Parametirazed Constructor
-    public Hardware(String brand, String model, int price) {
+    public Hardware(String name, String brand, String model, int price) {
+        this.name = name;
         this.brand = brand;
         this.model = model;
         this.price = price;
     }
 
     //Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -42,18 +52,18 @@ public class Hardware {
         this.price = price;
     }
 
+
     //To String
-
-
     @Override
     public String toString() {
         return "Hardware{" +
-                "brand='" + brand + '\'' +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
                 '}';
     }
 
-    //Methods
+//Methods
 
 }

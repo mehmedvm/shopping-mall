@@ -14,8 +14,8 @@ public class TV extends ElectronicDevice {
         this.hasHDMI = hasHDMI;
     }
 
-    public TV(String brand, String model, int price, boolean hasRemote, boolean hasHDMI) {
-        super(brand, model, price);
+    public TV(String name, String brand, String model, int price, boolean hasRemote, boolean hasHDMI) {
+        super(name, brand, model, price);
         this.hasRemote = hasRemote;
         this.hasHDMI = hasHDMI;
     }
