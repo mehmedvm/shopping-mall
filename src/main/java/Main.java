@@ -24,6 +24,7 @@ public class Main {
     //private static ShoppingCartMap shoppingCart1 = new ShoppingCartMap();
     private static HashMap<String, Integer> shoppingCartB = new HashMap<String, Integer>();
     private static List<String> shoppingCartL = new ArrayList<>();
+    private static HashSet<String> shoppingCartT = new HashSet<>();
 
     //MAIN Method
     public static void main(String[] args) {
@@ -39,8 +40,7 @@ public class Main {
 
     }
 
-    ////////////////////////////////////////////////////
-    //Register
+    /////////////Register///////////////////////////////////////
     public static void register() {
         System.out.println("Let's get you registered");
         System.out.print("Please enter your first name: ");
@@ -97,7 +97,7 @@ public class Main {
         }
     }
 
-    /////////////////////////////////////////////////////////////
+    //////////////MAIN MENU///////////////////////////////////////
     //Main Menu ... to choose 1- BestBuy / 2 - Lowes / 3- ToysRUs
     public static void mainMenu() {
         while (true) {
@@ -112,7 +112,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("You are viewing ToysRUs Toys");
-                    //viewToysrus();
+                    selectFromToysrus();
                     break;
                 case 4:
                     System.out.println("Thank you " + person1.getFirstName() + " for visiting the mall!");
@@ -232,7 +232,51 @@ public class Main {
         return scanner.nextInt();
     }
 
+    ///////////////// ToysRUs ////////////////////////
+    public static void selectFromToysrus() {
+        boolean whileCheck = true;  //to be able to break from while oop at option 4
+        while (whileCheck) {
+            switch (pickToy()) {
+                case 1:
+                    System.out.println("You selected Lego to add to cart");
+                    // Add the Lego to shopping cart
+                    shoppingCartT.add("Lego - $20");
+                    System.out.println("Shopping Cart Items: " + shoppingCartT);
+                    break;
+                case 2:
+                    System.out.println("You selected Toy Car to add to cart");
+                    // Add the Toy Car to shopping cart
+                    shoppingCartT.add("Toy car - $5");
+                    System.out.println("Shopping Cart Items: " + shoppingCartT);
+                    break;
+                case 3:
+                    System.out.println("You selected Magnatile to add to cart");
+                    // Add the Magnatile to shopping cart
+                    shoppingCartT.add("Magnatile - $25");
+                    System.out.println("Shopping Cart Items: " + shoppingCartT);
+                    break;
+                case 4:
+                    System.out.println("You selected to Exit to Main Menu");
+                    // Exit
+                    whileCheck = false;
+                    break;
+                default:
+                    System.out.println("Please pick between 1-4");
 
+            }
+        }
+    }
+
+    public static int pickToy() {
+        System.out.println("""
+        \nPlease pick a toy item from the list below to add to your shopping cart:
+        1. Lego for $20
+        2. Toy Car for $5
+        3. Magnatile for $25
+        4. Exit
+        """);
+        return scanner.nextInt();
+    }
 
 
 
