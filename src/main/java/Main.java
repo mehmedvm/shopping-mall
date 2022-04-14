@@ -1,3 +1,4 @@
+import mall.bestbuy.ElectronicDevice;
 import mall.bestbuy.Laptop;
 import mall.bestbuy.SmartPhone;
 import mall.bestbuy.TV;
@@ -182,14 +183,11 @@ public class Main {
                     System.out.println("You selected to go to shopping cart");
                     //List shopping cart items and with payment option
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
-                    IPay pay = new IPay() {
-                        @Override
-                        public void pay() {
-                            System.out.println("This is where you pay..");
-                        }
-                    };
-                    pay.pay();
-                    //pay();
+                    IPay ipay = new ElectronicDevice();
+                    ipay.pay();
+                    scanner.next();
+                    shoppingCartB.clear();
+                    break;
 
                     case 5:
                     System.out.println("You selected to Exit to Main Menu");

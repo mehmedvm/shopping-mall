@@ -1,6 +1,8 @@
 package mall.bestbuy;
 
-public class ElectronicDevice {
+import mall.interfaces.IPay;
+
+public class ElectronicDevice implements IPay {
     //Fields
     String name;
     String brand;
@@ -64,5 +66,13 @@ public class ElectronicDevice {
     }
 
     //Methods
+
+    @Override
+    public void pay() {
+        System.out.println("This is where you pay, enter the amount to pay");
+
+    }
+
+
 
 }
