@@ -1,17 +1,14 @@
-import mall.ShoppingCart;
-import mall.ShoppingCartMap;
-import mall.bestbuy.ElectronicDevice.*;
 import mall.bestbuy.Laptop;
 import mall.bestbuy.SmartPhone;
 import mall.bestbuy.TV;
 
+import mall.interfaces.IPay;
 import mall.lowes.Drill;
 import mall.lowes.Hammer;
 import mall.lowes.Screwdriver;
 
 import mall.toys_r_us.Lego;
 import mall.toys_r_us.Magnatile;
-import mall.toys_r_us.Toy.*;
 import mall.toys_r_us.ToyCar;
 import person.Person;
 
@@ -182,6 +179,19 @@ public class Main {
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
                     break;
                 case 4:
+                    System.out.println("You selected to go to shopping cart");
+                    //List shopping cart items and with payment option
+                    System.out.println("Shopping Cart Items: " + shoppingCartB);
+                    IPay pay = new IPay() {
+                        @Override
+                        public void pay() {
+                            System.out.println("This is where you pay..");
+                        }
+                    };
+                    pay.pay();
+                    //pay();
+
+                    case 5:
                     System.out.println("You selected to Exit to Main Menu");
                     // Exit
                     whileCheck = false;
@@ -199,7 +209,8 @@ public class Main {
         1. Laptop (HP/Q-Keyboard/Touchscreen) for $500
         2. TV (Samsung/Has Remote/Has HDMI) for $300
         3. Smart Phone (Apple/Verizon/Has Cover) for $700
-        4. Exit
+        4. Pay the shopping cart items
+        5. Exit
         """);
         return scanner.nextInt();
     }
@@ -299,7 +310,6 @@ public class Main {
         """);
         return scanner.nextInt();
     }
-
 
 
 }
