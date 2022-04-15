@@ -1,6 +1,8 @@
 package mall.lowes;
 
-public class Hardware {
+import mall.interfaces.IPay;
+
+public class Hardware implements IPay {
     //Fields
     String name;
     String brand;
@@ -64,6 +66,13 @@ public class Hardware {
                 '}';
     }
 
-//Methods
+    //Methods
+
+    @Override
+    public void pay() {
+        System.out.println("This is where you pay, enter the amount to pay:");
+    }
+
+
 
 }

@@ -1,6 +1,8 @@
 package mall.toys_r_us;
 
-public class Toy {
+import mall.interfaces.IPay;
+
+public class Toy implements IPay {
     //Fields
     String name;
     String brand;
@@ -64,5 +66,10 @@ public class Toy {
     }
 
     //Methods
+
+    @Override
+    public void pay() {
+        System.out.println("This is where you pay, enter the amount to pay:");
+    }
 
 }

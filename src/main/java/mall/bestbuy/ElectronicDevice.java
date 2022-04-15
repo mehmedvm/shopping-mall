@@ -69,7 +69,7 @@ public class ElectronicDevice implements IPay {
 
     @Override
     public void pay() {
-        System.out.println("This is where you pay, enter the amount to pay");
+        System.out.println("This is where you pay, enter the amount to pay:");
 
     }
 

@@ -6,10 +6,12 @@ import mall.bestbuy.TV;
 import mall.interfaces.IPay;
 import mall.lowes.Drill;
 import mall.lowes.Hammer;
+import mall.lowes.Hardware;
 import mall.lowes.Screwdriver;
 
 import mall.toys_r_us.Lego;
 import mall.toys_r_us.Magnatile;
+import mall.toys_r_us.Toy;
 import mall.toys_r_us.ToyCar;
 import person.Person;
 
@@ -183,8 +185,8 @@ public class Main {
                     System.out.println("You selected to go to shopping cart");
                     //List shopping cart items and with payment option
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
-                    IPay ipay = new ElectronicDevice();
-                    ipay.pay();
+                    IPay ipayBestBuy = new ElectronicDevice();
+                    ipayBestBuy.pay();
                     scanner.next();
                     shoppingCartB.clear();
                     break;
@@ -195,7 +197,7 @@ public class Main {
                     whileCheck = false;
                     break;
                 default:
-                    System.out.println("Please pick between 1-4");
+                    System.out.println("Please pick between 1-5");
 
             }
         }
@@ -241,12 +243,21 @@ public class Main {
                     System.out.println("Shopping Cart Items: " + shoppingCartL);
                     break;
                 case 4:
+                    System.out.println("You selected to go to shopping cart");
+                    //List shopping cart items and with payment option
+                    System.out.println("Shopping Cart Items: " + shoppingCartL);
+                    IPay ipayLowes = new Hardware();
+                    ipayLowes.pay();
+                    scanner.next();
+                    shoppingCartL.clear();
+                    break;
+                case 5:
                     System.out.println("You selected to Exit to Main Menu");
                     // Exit
                     whileCheck = false;
                     break;
                 default:
-                    System.out.println("Please pick between 1-4");
+                    System.out.println("Please pick between 1-5");
 
             }
         }
@@ -258,7 +269,8 @@ public class Main {
         1. Hammer for $15
         2. Screwdriver for $5
         3. Drill $100
-        4. Exit
+        4. Pay the shopping cart items
+        5. Exit
         """);
         return scanner.nextInt();
     }
@@ -287,12 +299,21 @@ public class Main {
                     System.out.println("Shopping Cart Items: " + shoppingCartT);
                     break;
                 case 4:
+                    System.out.println("You selected to go to shopping cart");
+                    //List shopping cart items and with payment option
+                    System.out.println("Shopping Cart Items: " + shoppingCartT);
+                    IPay ipayToysrus = new Toy();
+                    ipayToysrus.pay();
+                    scanner.next();
+                    shoppingCartT.clear();
+                    break;
+                case 5:
                     System.out.println("You selected to Exit to Main Menu");
                     // Exit
                     whileCheck = false;
                     break;
                 default:
-                    System.out.println("Please pick between 1-4");
+                    System.out.println("Please pick between 1-5");
 
             }
         }
@@ -304,7 +325,8 @@ public class Main {
         1. Lego for $20
         2. Toy Car for $5
         3. Magnatile for $25
-        4. Exit
+        4. Pay the shopping cart items
+        5. Exit
         """);
         return scanner.nextInt();
     }
