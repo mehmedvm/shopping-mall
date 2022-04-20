@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class PersonMain {
+public class _PersonMain {
     public static void main(String[] args) {
         Person person1 = new Person("Adam");
         Person person2 = new Person("Adam", "Ingram",41);

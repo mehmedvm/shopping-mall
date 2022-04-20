@@ -1,15 +1,15 @@
 package mall.bestbuy;
 
-public class BestBuy {
+public class _BestBuy {
     //Fields
     String name;
     String address;
 
     //Constructors
-    public BestBuy() {
+    public _BestBuy() {
     }
 
-    public BestBuy(String name, String address) {
+    public _BestBuy(String name, String address) {
         this.name = name;
         this.address = address;
     }

@@ -1,5 +1,5 @@
-Mehmet;
-Melek;
-44;
-[mmmmm];
-3456;
+Mehmet,
+Melek,
+44,
+[rty],
+345,

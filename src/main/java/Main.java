@@ -52,10 +52,14 @@ public class Main {
     public static void main(String[] args) {
 
         //Welcome
-        System.out.println("Welcome to Acme Shopping Mall!");
+        System.out.println("\nWelcome to Acme Shopping Mall!!!");
 
         //Register
         register();
+
+        ElectronicDevice elcDev2= new ElectronicDevice();
+        elcDev2.addElectronicDevice();
+        System.out.println(elcDev2);
 
         //MainManu (1-BestBuy / 2-Lowes / 3- ToysRUs
         mainMenu();
@@ -129,10 +133,14 @@ public class Main {
     public static void readFromAFile(Person person1) {
     try {
         String tempFile = Files.readString(filePath);
-        String[] tempArray = tempFile.split(",");
-        System.out.println("File created for: " + tempArray[0]);
-        System.out.println("User name: " + tempArray[3]);
+        //System.out.println(Arrays.toString(tempFile.split(",")));
+        // Transfer the file fields to an array...
+        String[] tempArray = tempFile.split(","+"\n");
+                //If you have multiple records in one file, you can have secondary delimiter like ";" or "\r\n"
+        // String[] tempArray2 = tempFile.split(";");
 
+        System.out.println("File created for: " + tempArray[0] + " " + tempArray[1]);
+        System.out.println("User name: " + tempArray[3]);
     }
     catch (Exception e) {
         e.printStackTrace();

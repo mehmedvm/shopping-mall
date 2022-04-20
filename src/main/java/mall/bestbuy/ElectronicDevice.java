@@ -2,6 +2,8 @@ package mall.bestbuy;
 
 import mall.interfaces.IPay;
 
+import java.util.Scanner;
+
 public class ElectronicDevice implements IPay {
     //Fields
     String name;
@@ -74,6 +76,18 @@ public class ElectronicDevice implements IPay {
     }
 
     //Add Electonic Device ()
+    public void addElectronicDevice() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Name of Electronic Device: ");
+        this.name = scanner.nextLine();
+        System.out.print("Name of Brand: ");
+        this.brand = scanner.nextLine();
+        System.out.print("Name of Model: ");
+        this.model = scanner.nextLine();
+        System.out.print("Price: ");
+        this.price = scanner.nextInt();
+
+    }
 
     //Remove El. Dev ()
 
