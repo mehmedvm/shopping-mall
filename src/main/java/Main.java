@@ -26,7 +26,7 @@ public class Main {
     ////Class Fields
     private static final Scanner scanner = new Scanner(System.in);
     //private static final ElectronicDevice electronicdevice1 = new ElectronicDevice();
-    private static final Path filePath = Paths.get("C:\\java-Training\\java-projects\\shopping-mall\\register.txt");
+    private static final Path filePath = Paths.get("C:\\java-Training\\java-projects\\shopping-mall\\shopping-mall\\src\\main\\resources\\register.txt");
     private static Person person1 = new Person();
     //private static ShoppingCartMap shoppingCart1 = new ShoppingCartMap();
     private static HashMap<String, Integer> shoppingCartB = new HashMap<String, Integer>();
@@ -93,6 +93,11 @@ public class Main {
         System.out.println("\nCalling the update a file method...");
         //writeToAFile(firstName,lastName,age,userID,password);
         writeToAFile(person1);
+
+        //Read from the file
+        System.out.println("\nCalling the read a file method...");
+        readFromAFile(person1);
+
     }
 
 
@@ -109,15 +114,32 @@ public class Main {
     //Write to a file
     public static void writeToAFile(Person person1)  {
         try {
-            Files.writeString(filePath, person1.getFirstName() + "\n");
-            Files.writeString(filePath, person1.getLastName() + "\n", StandardOpenOption.APPEND);
-            Files.writeString(filePath, String.valueOf(person1.getAge()) + "\n", StandardOpenOption.APPEND);
-            Files.writeString(filePath, person1.getUsedID() + "\n", StandardOpenOption.APPEND);
-            Files.writeString(filePath, person1.getPassword() + "\n", StandardOpenOption.APPEND);
+            //Files.writeString(filePath, person1.getFirstName() + "\n");
+            Files.writeString(filePath, person1.getFirstName() + "," + "\n");
+            Files.writeString(filePath, person1.getLastName() + "," + "\n", StandardOpenOption.APPEND);
+            Files.writeString(filePath, String.valueOf(person1.getAge()) + "," + "\n", StandardOpenOption.APPEND);
+            Files.writeString(filePath, person1.getUsedID() + "," + "\n", StandardOpenOption.APPEND);
+            Files.writeString(filePath, person1.getPassword() + "," + "\n", StandardOpenOption.APPEND);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    //Read from a file
+    public static void readFromAFile(Person person1) {
+    try {
+        String tempFile = Files.readString(filePath);
+        String[] tempArray = tempFile.split(",");
+        System.out.println("File created for: " + tempArray[0]);
+        System.out.println("User name: " + tempArray[3]);
+
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    }
+
 
     //////////////MAIN MENU///////////////////////////////////////
     //Main Menu ... to choose 1- BestBuy / 2 - Lowes / 3- ToysRUs
@@ -177,7 +199,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("You selected Smart Phone to add to cart");
-                    // Add the TSmart Phone to shopping cart
+                    // Add the Smart Phone to shopping cart
                     shoppingCartB.put(smartphone1.getName(),smartphone1.getPrice());
                     System.out.println("Shopping Cart Items: " + shoppingCartB);
                     break;

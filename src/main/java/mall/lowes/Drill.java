@@ -2,8 +2,8 @@ package mall.lowes;
 
 public class Drill extends Hardware{
     // Fields
-    int size;
-    String color;
+    private int  size;
+    private String color;
 
     //Constructors
     public Drill() {
@@ -38,8 +38,6 @@ public class Drill extends Hardware{
     }
 
     //To String
-
-
     @Override
     public String toString() {
         return "Drill{" +

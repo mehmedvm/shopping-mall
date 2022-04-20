@@ -73,6 +73,8 @@ public class ElectronicDevice implements IPay {
 
     }
 
+    //Add Electonic Device ()
 
+    //Remove El. Dev ()
 
 }
